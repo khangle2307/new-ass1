@@ -1,7 +1,11 @@
 const Searchbar = {
     render() {
         return /* html */ `
+<<<<<<< HEAD
        <div class="pt-2 relative mx-3 text-gray-600">
+=======
+       <div class="pt-2 relative mx-auto text-gray-600">
+>>>>>>> abdf420e2c9e51c8eac33ce03477a3b1b19868dd
            <input class="border-2 border-gray-300 bg-white h-9 px-5 pr-16 rounded-lg text-sm focus:outline-none"
            type="search" name="search" placeholder="Search">
            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
