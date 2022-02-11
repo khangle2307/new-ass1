@@ -1,5 +1,3 @@
-import Searchbar from "./searchbar";
-
 const Navbar = {
     render() {
         return /* html */`
@@ -12,7 +10,7 @@ const Navbar = {
            <li><a href="#" class="text-white px-2">Phụ kiện</a></li>
         </ul>   
         <div class="flex my-1">
-            ${Searchbar.render}
+            ${searchbar.render()}
            <button class="btn-blue">Đăng nhập</button>
         </div>   
      </div>
