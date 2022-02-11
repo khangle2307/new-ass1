@@ -10,7 +10,7 @@ const Navbar = {
            <li><a href="#" class="text-white px-2">Phụ kiện</a></li>
         </ul>   
         <div class="flex my-1">
-           <div class="pt-2 relative mx-auto text-gray-600 mx-3">
+           <div class="pt-2 relative mx-auto text-gray-600 ">
               <input class="border-2 border-gray-300 bg-white h-9 px-5 pr-16 rounded-lg text-sm focus:outline-none"
               type="search" name="search" placeholder="Search">
               <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
