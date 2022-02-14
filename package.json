@@ -18,6 +18,7 @@
     "vite": "^2.8.0"
   },
   "dependencies": {
-    "navigo": "^8.11.1"
+    "navigo": "^8.11.1",
+    "remixicon": "^2.5.0"
   }
 }
