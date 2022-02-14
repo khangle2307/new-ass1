@@ -1,5 +1,6 @@
 import Navigo from "navigo";
 import Dashboard from "./pages/admin/dashboard";
+import AdminProductsPage from "./pages/admin/products";
 import Homepage from "./pages/home";
 
 const router = new Navigo("/", { linksSelector: "a" });
@@ -13,7 +14,19 @@ router.on({
     "/": () => {
         print(Homepage);
     },
-    "/dashboard": () => {
+    "/admin/dashboard": () => {
+        print(Dashboard);
+    },
+    "/admin/products": () => {
+        print(AdminProductsPage);
+    },
+    "/admin/articles": () => {
+        print(Dashboard);
+    },
+    "/admin/users": () => {
+        print(Dashboard);
+    },
+    "/admin/statistics": () => {
         print(Dashboard);
     },
 });
