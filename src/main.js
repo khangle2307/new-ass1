@@ -1,4 +1,5 @@
 import Navigo from "navigo";
+import Dashboard from "./pages/admin/dashboard";
 import Homepage from "./pages/home";
 
 const router = new Navigo("/", { linksSelector: "a" });
@@ -12,7 +13,8 @@ router.on({
     "/": () => {
         print(Homepage);
     },
-    "/about": () => {
+    "/dashboard": () => {
+        print(Dashboard);
     },
 });
 
