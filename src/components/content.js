@@ -114,7 +114,7 @@ const Content = {
         </div>
 
         <h2 class="title text-xl uppercase hover:underline py-4">Phụ kiện</h2>
-        <div class="flex gap-4">
+        <div class="flex gap-4 my-5">
          <div class="w-[250px] h-[300px] rounded shadow-md">
                <div class="">
                <a href="">

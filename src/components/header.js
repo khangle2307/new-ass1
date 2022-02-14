@@ -6,7 +6,6 @@ const Header = {
          <div class="h-20 bg-blue-900">
             ${Navbar.render()}
          </div>
-       
       `;
     },
 };

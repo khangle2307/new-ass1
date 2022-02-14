@@ -1,5 +1,6 @@
 import Banner from "../components/banner";
 import Content from "../components/content";
+import Footer from "../components/footer";
 import Header from "../components/header";
 
 const Homepage = {
@@ -10,6 +11,8 @@ const Homepage = {
                 ${Header.render()}
                 ${Banner.render()}
                 ${Content.render()}
+                ${Footer.render()}
+                ${Footer.render()}
             </div>
         </div> 
        `;
