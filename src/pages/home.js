@@ -1,7 +1,7 @@
 import Banner from "../components/banner";
-import Content from "../components/content";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Products from "../components/products";
 
 const Homepage = {
     render() {
@@ -10,7 +10,7 @@ const Homepage = {
                 <div class="w-980 mx-auto">
                     ${Header.render()}
                     ${Banner.render()}
-                    ${Content.render()}
+                    ${Products.render()}
                     ${Footer.render()}
                 </div>
             </div> 
