@@ -77,7 +77,6 @@ const AdminProductsPage = {
                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Xóa</a>    
                         </td>
                      </tr>
-
                      <!-- More people... -->
                   </tbody>
                </table>
