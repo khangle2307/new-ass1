@@ -15,7 +15,7 @@ const Signin = {
            <div class="rounded-md shadow-sm -space-y-px">
              <div>
                <label for="email-address" class="sr-only">Tên đăng nhập</label>
-               <input id="username" name="username" type="text" autocomplete="email" required
+               <input id="email" name="username" type="text" autocomplete="email" required
                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                  placeholder="Tên đăng nhập">
              </div>
@@ -27,7 +27,7 @@ const Signin = {
              </div>
            </div>
            <div>
-             <button type="submit"
+             <button
                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                  <!-- Heroicon name: solid/lock-closed -->
@@ -51,12 +51,16 @@ const Signin = {
         formSignin.addEventListener("submit", async (e) => {
             e.preventDefault();
             try {
-                const { data } = await signin({
-                    username: document.querySelector("#username").value,
+                const response = await signin({
+                    email: document.querySelector("#email").value,
                     password: document.querySelector("#password").value,
                 });
-                localStorage.setItem("user", JSON.stringify(data.user));
-                toastr.success("bạn đã đăng nhập thành công , sẽ chuyển trang sau 3s");
+                localStorage.setItem("user", JSON.stringify(response.data.user));
+                if (response.data.user.id === 1) {
+                    document.location.href = "/admin/dashboard";
+                } else {
+                    document.location.href = "/";
+                }
             } catch (error) {
                 console.log(error.response.data);
             }
