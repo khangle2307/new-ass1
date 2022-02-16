@@ -16,6 +16,9 @@ const Homepage = {
             </div> 
         `;
     },
+    afterRender() {
+        Header.afterRender();
+    },
 };
 
 export default Homepage;

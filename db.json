@@ -105,6 +105,12 @@
       "password": "$2a$10$wKmI4JUR0WRy3rcfhlvAH.nvvLmVfNNUJaegTYK2QDJzdu91ZoEU.",
       "username": "admin",
       "id": 1
+    },
+    {
+      "email": "khangle2307@gmail.com",
+      "password": "$2a$10$zttSQZGpoKx.J8qxIVL0LuutHWTgpoUz3R/pI7ZSXZmPJ.GSv1Bp.",
+      "username": "admin2",
+      "id": 2
     }
   ]
 }

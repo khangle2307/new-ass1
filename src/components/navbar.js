@@ -12,7 +12,6 @@ const Navbar = {
            <li><a href="/dongho" class="text-white px-2">Đồng hồ</a></li>
         </ul>   
         <div class="flex my-1 mx-4">
-           <button class="btn-blue">Đăng nhập</button>
            ${Cart.render()}
         </div>   
      </div>

@@ -46,6 +46,7 @@ const Signup = {
                 </span>
                 Đăng Ký
               </button>
+              <a href="/signin" class="text-center">Đăng nhập</a>
             </div>
           </form>
         </div>
@@ -54,14 +55,18 @@ const Signup = {
     },
     afterRender() {
         const formSignup = document.querySelector("#formSignup");
-        formSignup.addEventListener("submit", (e) => {
+        formSignup.addEventListener("submit", async (e) => {
             e.preventDefault();
-
-            signup({
-                username: document.querySelector("#username").value,
-                email: document.querySelector("#email").value,
-                password: document.querySelector("#password").value,
-            });
+            try {
+                const response = await signup({
+                    username: document.querySelector("#username").value,
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value,
+                });
+                console.log(response);
+            } catch (error) {
+                console.log(error.response.data);
+            }
         });
     },
 };
