@@ -1,88 +1,88 @@
 {
   "products": [
     {
-      "id":1,
-      "name":"iphone 12",
-      "price":12000000,
-      "image":"https://image.cellphones.com.vn/200x/media/catalog/product/i/p/iphone-12_2__3.jpg",
-      "desc":"Điện thoại tốt" 
+      "id": 1,
+      "name": "iphone 12",
+      "price": 12000000,
+      "image": "https://image.cellphones.com.vn/200x/media/catalog/product/i/p/iphone-12_2__3.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":2,
-      "name":"Samsung Galaxy Z Fold3 5G",
-      "price":40000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
-      "desc":"Điện thoại tốt"
+      "id": 2,
+      "name": "Samsung Galaxy Z Fold3 5G",
+      "price": 40000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":3,
-      "name":"Samsung Galaxy A22 4G",
-      "price":12000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/a/2/a22-2.jpg",
-      "desc":"Điện thoại tốt"
+      "id": 3,
+      "name": "Samsung Galaxy A22 4G",
+      "price": 12000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/a/2/a22-2.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":4,
-      "name":"Samsung Galaxy A12",
-      "price":12000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/s/a/samsung-galaxy-a12_2_.jpg",
-      "desc":"Điện thoại tốt"
+      "id": 4,
+      "name": "Samsung Galaxy A12",
+      "price": 12000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/s/a/samsung-galaxy-a12_2_.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":5,
-      "name":"Xiaomi mi 11 lite 5g",
-      "price":5100000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/x/i/xiaomi-mi-11-lite-5g-2_10.png",
-      "desc":"Điện thoại tốt" 
+      "id": 5,
+      "name": "Xiaomi mi 11 lite 5g",
+      "price": 5100000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/x/i/xiaomi-mi-11-lite-5g-2_10.png",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":6,
-      "name":"Xiaomi redmi note 11 pro",
-      "price":6000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/_/t_i_xu_ng_2_18.png",
-      "desc":"Điện thoại tốt" 
+      "id": 6,
+      "name": "Xiaomi redmi note 11 pro",
+      "price": 6000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/_/t_i_xu_ng_2_18.png",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":7,
-      "name":"Oppo Reno4 Pro",
-      "price":79900000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/0/_0001_combo_-_reno4_pro_-_white.jpg",
-      "desc":"Điện thoại tốt"
+      "id": 7,
+      "name": "Oppo Reno4 Pro",
+      "price": 79900000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/0/_0001_combo_-_reno4_pro_-_white.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":8,
-      "name":"Xiaomi Redmi Note 10 pro",
-      "price":7000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/_/t_i_xu_ng_2_18.png",
-      "desc":"Điện thoại tốt"
+      "id": 8,
+      "name": "Xiaomi Redmi Note 10 pro",
+      "price": 7000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/t/_/t_i_xu_ng_2_18.png",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":9,
-      "name":"OPPO Reno 5 Pro",
-      "price":18000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/o/p/oppo-reno-5-5g_2_.jpg",
-      "desc":"Điện thoại tốt"
+      "id": 9,
+      "name": "OPPO Reno 5 Pro",
+      "price": 18000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/o/p/oppo-reno-5-5g_2_.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":10,
-      "name":"OPPO Find X2",
-      "price":14000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/6/3/637191049692122812_oppo-find-x2-xanh-1.png",
-      "desc":"Điện thoại tốt"
+      "id": 10,
+      "name": "OPPO Find X2",
+      "price": 14000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/6/3/637191049692122812_oppo-find-x2-xanh-1.png",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":11,
-      "name":"OnePlus Nord CE 5G",
-      "price":9000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/o/n/one_plus-1_2.jpg",
-      "desc":"Điện thoại tốt"
+      "id": 11,
+      "name": "OnePlus Nord CE 5G",
+      "price": 9000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/o/n/one_plus-1_2.jpg",
+      "desc": "Điện thoại tốt"
     },
     {
-      "id":12,
-      "name":"OnePlus 8T 5G",
-      "price":13000000,
-      "image":"https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/5/0/500-500-max_4_.png",
-      "desc":"Điện thoại tốt" 
+      "id": 12,
+      "name": "OnePlus 8T 5G",
+      "price": 13000000,
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/5/0/500-500-max_4_.png",
+      "desc": "Điện thoại tốt"
     }
   ],
   "posts": [
@@ -99,8 +99,12 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
-
+  "users": [
+    {
+      "email": "khanglmph14697@fpt.edu.vn",
+      "password": "$2a$10$wKmI4JUR0WRy3rcfhlvAH.nvvLmVfNNUJaegTYK2QDJzdu91ZoEU.",
+      "username": "admin",
+      "id": 1
+    }
+  ]
 }

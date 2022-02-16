@@ -1,3 +1,5 @@
+import { signin } from "../api/user";
+
 const Signin = {
     render() {
         return /* html */`
@@ -8,12 +10,12 @@ const Signin = {
              alt="Workflow">
            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Đăng nhập</h2>
          </div>
-         <form class="mt-8 space-y-6" action="#" method="POST">
+         <form class="mt-8 space-y-6" action="#" method="POST" id="formSignin">
            <input type="hidden" name="remember" value="true">
            <div class="rounded-md shadow-sm -space-y-px">
              <div>
                <label for="email-address" class="sr-only">Tên đăng nhập</label>
-               <input id="email-address" name="username" type="text" autocomplete="email" required
+               <input id="username" name="username" type="text" autocomplete="email" required
                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                  placeholder="Tên đăng nhập">
              </div>
@@ -43,6 +45,22 @@ const Signin = {
        </div>
      </div>
        `;
+    },
+    afterRender() {
+        const formSignin = document.querySelector("#formSignin");
+        formSignin.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            try {
+                const { data } = await signin({
+                    username: document.querySelector("#username").value,
+                    password: document.querySelector("#password").value,
+                });
+                localStorage.setItem("user", JSON.stringify(data.user));
+                toastr.success("bạn đã đăng nhập thành công , sẽ chuyển trang sau 3s");
+            } catch (error) {
+                console.log(error.response.data);
+            }
+        });
     },
 };
 export default Signin;
