@@ -1,6 +1,7 @@
 import Navigo from "navigo";
 import Dashboard from "./pages/admin/dashboard";
 import AdminProductsPage from "./pages/admin/products";
+import usersAdmin from "./pages/admin/users";
 import Homepage from "./pages/home";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
@@ -32,7 +33,7 @@ router.on({
         print(Dashboard);
     },
     "/admin/users": () => {
-        print(Dashboard);
+        print(usersAdmin);
     },
     "/admin/statistics": () => {
         print(Dashboard);

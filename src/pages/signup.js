@@ -1,4 +1,4 @@
-import { signup } from "../api/user";
+import { signup } from "../api/users";
 
 const Signup = {
     render() {

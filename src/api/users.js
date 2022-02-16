@@ -1,5 +1,10 @@
 import instance from "./config";
 
+export const getAll = () => {
+    const url = "/users";
+    return instance.get(url);
+};
+
 export const signup = (user) => {
     const url = "/signup";
     return instance.post(url, user);
