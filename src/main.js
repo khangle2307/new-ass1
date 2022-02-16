@@ -1,6 +1,8 @@
 import Navigo from "navigo";
 import Dashboard from "./pages/admin/dashboard";
+import AdminNews from "./pages/admin/news";
 import AdminProductsPage from "./pages/admin/products";
+import AdminAddProduct from "./pages/admin/products/add";
 import usersAdmin from "./pages/admin/users";
 import Homepage from "./pages/home";
 import Signin from "./pages/signin";
@@ -29,8 +31,11 @@ router.on({
     "/admin/products": () => {
         print(AdminProductsPage);
     },
-    "/admin/articles": () => {
-        print(Dashboard);
+    "/admin/products/add": () => {
+        print(AdminAddProduct);
+    },
+    "/admin/news": () => {
+        print(AdminNews);
     },
     "/admin/users": () => {
         print(usersAdmin);

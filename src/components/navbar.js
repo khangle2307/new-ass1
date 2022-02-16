@@ -9,7 +9,7 @@ const Navbar = {
            <li><a href="/phone" class="text-white px-2">Điện thoại</a></li>
            <li><a href="/laptop" class="text-white px-2">Laptop,pc,máy tính</a></li>
            <li><a href="/phukien" class="text-white px-2">Phụ kiện</a></li>
-           <li><a href="/dongho" class="text-white px-2">Đồng hồ</a></li>
+           <li><a href="/news" class="text-white px-2">Tin tức</a></li>
         </ul>   
         <div class="flex my-1 mx-4">
            ${Cart.render()}

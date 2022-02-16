@@ -7,7 +7,7 @@ export const getAll = () => {
 
 export const get = (id) => {
     const url = `/posts/${id}`;
-    return instance.get(url);
+    return instance.get(url, id);
 };
 
 export const add = (post) => {
@@ -17,7 +17,7 @@ export const add = (post) => {
 
 export const remove = (id) => {
     const url = `/posts/${id}`;
-    return instance.delete(url);
+    return instance.put(url, id);
 };
 
 export const update = (post) => {

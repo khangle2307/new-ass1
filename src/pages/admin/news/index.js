@@ -1,18 +1,18 @@
-import { getAll } from "../../../api/product";
+import { getAll } from "../../../api/posts";
 import AdminNav from "../../../components/AdminNav";
 
-const AdminProducts = {
+const AdminNews = {
     async render() {
         const { data } = await getAll();
-        return /* html */`
+        return /* html */ `
             <div class="min-h-full">
             ${AdminNav.render()}
             <div class="lg:flex lg:items-center lg:justify-between my-4">
             <div class="flex-1 min-w-0">
-               <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Quản lý sản phẩm</h2>
+               <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Quản lý bài viết</h2>
                <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                   <div class="mt-2 flex items-center text-sm text-gray-500">
-                  Dashboard
+                  Dashboard / Bài viết
                   </div>
                </div>
             </div>
@@ -39,48 +39,53 @@ const AdminProducts = {
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         STT</th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Tên sản phẩm</th>
+                        Tên bài viết</th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Đơn giá</th>
+                        Tác giả</th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Hình ảnh</th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Mô tả</th>   
+                        Nội dung</th>
+                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Thời gian</th>       
                      <th scope="col" class="relative px-6 py-3">
                         <span class="sr-only">Edit</span>
                      </th>
                      </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                     ${data.map((product, index) => `\
+                     ${data.map((post, index) => `
                            <tr>
-                           <td class="px-6 py-4 whitespace-nowrap">
-                              <div class="flex items-center">
-                                 <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900">${index + 1}</div>
+                              <td class="px-6 py-4 whitespace-nowrap">
+                                 <div class="flex items-center">
+                                    <div class="ml-4">
+                                       <div class="text-sm font-medium text-gray-900">${index + 1}</div>
+                                    </div>
                                  </div>
-                              </div>
-                           </td>
-                           <td class="px-6 py-4 whitespace-nowrap">
-                              <div class="text-sm text-gray-900">${product.name}</div>
-                           </td>
-                           <td class="px-6 py-4 whitespace-nowrap">
-                              <span>${product.price}</span>
-                           </td>
-                           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              <div class="flex-shrink-0 h-10 w-10">
-                                 <img class="h-10 w-10 rounded-full"
-                                    src="${product.image}"
-                                    alt="">
-                              </div>
-                           </td>
-                           <td class="px-6 py-4 whitespace-nowrap">
-                              <span>${product.desc}</span>
-                           </td>
-                           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                              <a href="/admin/news/${product.id}" class="text-indigo-600 hover:text-indigo-900 px-2">Sửa</a>
-                              <a href="/admin/news/${product.id}" class="text-indigo-600 hover:text-indigo-900">Xóa</a>    
-                           </td>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap">
+                                 <div class="text-sm text-gray-900">${post.title}</div>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap">
+                                 <span>${post.author}</span>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                 <div class="flex-shrink-0 h-10 w-10">
+                                    <img class="h-10 w-10 rounded-full"
+                                       src="${post.image}"
+                                       alt="">
+                                 </div>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap">
+                                 <p class="w-[10px]">${post.content}</p>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap">
+                                 <span>${post.time}</span>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                 <a href="/admin/news/${post.id}" class="text-indigo-600 hover:text-indigo-900 px-2">Sửa</a>
+                                 <a href="/admin/news/${post.id}" class="text-indigo-600 hover:text-indigo-900">Xóa</a>    
+                              </td>
                         </tr>
                      `).join("")}
                   </tbody>
@@ -89,9 +94,8 @@ const AdminProducts = {
             </div>
          </div>
          </div>
-
         `;
     },
 };
 
-export default AdminProducts;
+export default AdminNews;
