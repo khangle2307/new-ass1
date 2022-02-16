@@ -76,8 +76,8 @@ const AdminNews = {
                                        alt="">
                                  </div>
                               </td>
-                              <td class="px-6 py-4 whitespace-nowrap">
-                                 <p class="w-[10px]">${post.content}</p>
+                              <td class="px-6 py-4">
+                                 <p class="break-all">${post.content}</p>
                               </td>
                               <td class="px-6 py-4 whitespace-nowrap">
                                  <span>${post.time}</span>
