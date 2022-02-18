@@ -9,14 +9,14 @@ const Products = {
             ${data.map((product) => `
                <div class="w-[200px] h-[300px] rounded shadow-md">
                   <div class="">
-                     <a href="/detailProduct/">
+                     <a href="/product/${product.id}">
                         <img
                            src="${product.image}"
                            alt="">
                      </a>
                   </div>
                   <div class="text-sm uppercase text-center py-1">
-                     <a href="/detailProduct/">${product.name}</a>
+                     <a href="/product/${product.id}">${product.name}</a>
                   </div>
                   <div class=" text-center">
                      <p class="special-price">${product.price}&nbsp;₫</p>

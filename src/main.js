@@ -4,6 +4,7 @@ import AdminNews from "./pages/admin/news";
 import AdminProductsPage from "./pages/admin/products";
 import AdminAddProduct from "./pages/admin/products/add";
 import usersAdmin from "./pages/admin/users";
+import DetailProductPage from "./pages/detailProducts";
 import Homepage from "./pages/home";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
@@ -25,6 +26,7 @@ router.on({
     "/signin": () => {
         print(Signin);
     },
+    "/product/:id": ({ data }) => print(DetailProductPage, data.id),
     "/admin/dashboard": () => {
         print(Dashboard);
     },
