@@ -4,10 +4,11 @@ import AdminNews from "./pages/admin/news";
 import AdminProductsPage from "./pages/admin/products";
 import AdminAddProduct from "./pages/admin/products/add";
 import usersAdmin from "./pages/admin/users";
-import DetailProductPage from "./pages/detailProducts";
+import DetailProductPage from "./pages/product/detail";
 import Homepage from "./pages/home";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
+import CartPage from "./pages/cart";
 
 const router = new Navigo("/", { linksSelector: "a", hash: "true" });
 
@@ -44,6 +45,9 @@ router.on({
     },
     "/admin/statistics": () => {
         print(Dashboard);
+    },
+    "/cart": () => {
+        print(CartPage);
     },
 });
 

@@ -4,7 +4,7 @@ const Cart = {
     render() {
         return /* html */ `
             <div class="mx-3">
-                <i class="ri-shopping-bag-line text-white relative text-3xl"></i>
+                <a src="../pages/cart.js"><i class="ri-shopping-bag-line text-white relative text-3xl"></i></a>
                 <p class="text-white absolute top-0">0</p>
             </div>
      `;

@@ -1,9 +1,10 @@
 import toastr from "toastr";
-import { get } from "../api/product";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import { addToCart } from "../utils/cart";
-import { $ } from "../utils/selector";
+import { get } from "../../api/product";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
+import { addToCart } from "../../utils/cart";
+import { $ } from "../../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const DetailProductPage = {
     async render(id) {
