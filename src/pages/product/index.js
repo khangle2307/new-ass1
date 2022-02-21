@@ -1,6 +1,12 @@
+import Header from "../../components/header";
+
 const ProductPage = {
     render() {
-        return `
+        return /* html */ `
+        <div class="w-1140">
+          <div class="w-980">
+            ${Header.render()}
+        </div>
       `;
     },
 };

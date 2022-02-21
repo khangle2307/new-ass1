@@ -27,7 +27,7 @@ router.on({
     "/signin": () => {
         print(Signin);
     },
-    "/product/:id": ({ data }) => print(DetailProductPage, data.id),
+    "/product/detail/:id": ({ data }) => print(DetailProductPage, data.id),
     "/admin/dashboard": () => {
         print(Dashboard);
     },
