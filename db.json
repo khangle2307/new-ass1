@@ -231,5 +231,23 @@
       "username": "admin2",
       "id": 2
     }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "name": "iphone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung "
+    },
+    {
+      "name": "xiaomi",
+      "id": 6
+    },
+    {
+      "name": "oppo",
+      "id": 7
+    }
   ]
 }

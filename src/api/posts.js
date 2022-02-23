@@ -17,10 +17,10 @@ export const add = (post) => {
 
 export const remove = (id) => {
     const url = `/posts/${id}`;
-    return instance.put(url, id);
+    return instance.delete(url, id);
 };
 
 export const update = (post) => {
     const url = `/posts/${post.id}`;
-    return instance.delete(url, post);
+    return instance.put(url, post);
 };

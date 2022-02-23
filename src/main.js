@@ -10,6 +10,9 @@ import Signin from "./pages/signin";
 import Signup from "./pages/signup";
 import CartPage from "./pages/cart";
 import AdminUpdateProduct from "./pages/admin/products/edit";
+import AdminCategorys from "./pages/admin/categorys";
+import AdminAddCategory from "./pages/admin/categorys/add";
+import AdminUpdateCategory from "./pages/admin/categorys/edit";
 
 const router = new Navigo("/", { linksSelector: "a", hash: "true" });
 
@@ -42,6 +45,13 @@ router.on({
     "/admin/news": () => {
         print(AdminNews);
     },
+    "/admin/categorys": () => {
+        print(AdminCategorys);
+    },
+    "/admin/categorys/add": () => {
+        print(AdminAddCategory);
+    },
+    "/admin/categorys/:id/edit": ({ data }) => print(AdminUpdateCategory, data.id),
     "/admin/users": () => {
         print(usersAdmin);
     },
