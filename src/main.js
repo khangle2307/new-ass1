@@ -13,6 +13,7 @@ import AdminUpdateProduct from "./pages/admin/products/edit";
 import AdminCategorys from "./pages/admin/categorys";
 import AdminAddCategory from "./pages/admin/categorys/add";
 import AdminUpdateCategory from "./pages/admin/categorys/edit";
+import CateProduct from "./pages/cateProduct";
 
 const router = new Navigo("/", { linksSelector: "a", hash: "true" });
 
@@ -32,6 +33,9 @@ router.on({
         print(Signin);
     },
     "/product/:id": ({ data }) => print(DetailProductPage, data.id),
+    "/cateProduct": () => {
+        print(CateProduct);
+    },
     "/admin/dashboard": () => {
         print(Dashboard);
     },

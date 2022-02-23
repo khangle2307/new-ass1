@@ -1,26 +1,31 @@
 import instance from "./config";
 
 export const getAll = () => {
-    const url = "/categorys";
+    const url = "/cates";
     return instance.get(url);
 };
 
 export const get = (id) => {
-    const url = `/categorys/${id}`;
+    const url = `/cates/${id}`;
     return instance.get(url, id);
 };
 
-export const add = (category) => {
-    const url = "/categorys";
-    return instance.post(url, category);
+export const add = (cate) => {
+    const url = "/cates";
+    return instance.post(url, cate);
 };
 
 export const remove = (id) => {
-    const url = `/categorys/${id}`;
+    const url = `/cates/${id}`;
     return instance.delete(url, id);
 };
 
-export const update = (category) => {
-    const url = `/categorys/${category.id}`;
-    return instance.put(url, category);
+export const update = (cate) => {
+    const url = `/cates/${cate.id}`;
+    return instance.put(url, cate);
+};
+
+export const GetProduct = () => {
+    const url = "/cates?_embed=products";
+    return instance.get(url);
 };
