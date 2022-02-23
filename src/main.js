@@ -9,6 +9,7 @@ import Homepage from "./pages/home";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
 import CartPage from "./pages/cart";
+import AdminUpdateProduct from "./pages/admin/products/edit";
 
 const router = new Navigo("/", { linksSelector: "a", hash: "true" });
 
@@ -37,6 +38,7 @@ router.on({
     "/admin/products/add": () => {
         print(AdminAddProduct);
     },
+    "/admin/products/:id/edit/": ({ data }) => print(AdminUpdateProduct, data.id),
     "/admin/news": () => {
         print(AdminNews);
     },

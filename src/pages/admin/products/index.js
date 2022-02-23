@@ -1,9 +1,12 @@
-import { getAll } from "../../../api/product";
+import toastr from "toastr";
+import { paginate, remove } from "../../../api/product";
 import AdminNav from "../../../components/AdminNav";
+import { reRender } from "../../../utils/reRender";
 
 const AdminProducts = {
     async render() {
-        const { data } = await getAll();
+        const data = await paginate(1, 6);
+        console.log(data.data);
         return /* html */`
             <div class="min-h-full">
             ${AdminNav.render()}
@@ -43,6 +46,8 @@ const AdminProducts = {
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Đơn giá</th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                       Số lượng</th>   
+                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Hình ảnh</th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Mô tả</th>   
@@ -52,7 +57,7 @@ const AdminProducts = {
                      </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                     ${data.map((product, index) => `\
+                     ${data.data.map((product, index) => `\
                            <tr>
                            <td class="px-6 py-4 whitespace-nowrap">
                               <div class="flex items-center">
@@ -67,6 +72,9 @@ const AdminProducts = {
                            <td class="px-6 py-4 whitespace-nowrap">
                               <span>${product.price}</span>
                            </td>
+                           <td class="px-6 py-4 whitespace-nowrap">
+                              <span>${product.quantity}</span>
+                           </td>
                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                               <div class="flex-shrink-0 h-10 w-10">
                                  <img class="h-10 w-10 rounded-full"
@@ -78,19 +86,36 @@ const AdminProducts = {
                               <span>${product.desc}</span>
                            </td>
                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                              <a href="/admin/news/${product.id}" class="text-indigo-600 hover:text-indigo-900 px-2">Sửa</a>
-                              <a href="/admin/news/${product.id}" class="text-indigo-600 hover:text-indigo-900">Xóa</a>    
+                              <a href="/admin/products/${product.id}/edit" class="text-indigo-600 hover:text-indigo-900 px-2">Sửa</a>
+                              <button data-id="${product.id}" class="btn-remove text-indigo-600 hover:text-indigo-900">Xóa</button>    
                            </td>
-                        </tr>
+                        </tr>                            
                      `).join("")}
                   </tbody>
                </table>
                </div>
             </div>
+            <div class="flex gap-2">
+            </div>
          </div>
          </div>
 
         `;
+    },
+    afterRender() {
+        const btnRemove = document.querySelectorAll(".btn-remove");
+        btnRemove.forEach((btn) => {
+            const { id } = btn.dataset;
+            btn.addEventListener("click", () => {
+                console.log(btn);
+                const confirm = window.confirm("bạn có muốn xóa không ?");
+                if (confirm) {
+                    remove(id)
+                        .then(() => toastr.success("bạn đã xóa thành công !"))
+                        .then(() => reRender(AdminProducts, "#app"));
+                }
+            });
+        });
     },
 };
 

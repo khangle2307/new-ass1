@@ -1,9 +1,13 @@
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable no-undef */
 import axios from "axios";
-import { add } from "../../../api/product";
+import { get, update } from "../../../api/product";
 import AdminNav from "../../../components/AdminNav";
 
-const AdminAddProduct = {
-    render() {
+const AdminUpdateProduct = {
+    async render(id) {
+        const { data } = await get(id);
+        console.log(data.id);
         return /* html */ `
         <div class="min-h-full">
         ${AdminNav.render()}
@@ -36,34 +40,34 @@ const AdminAddProduct = {
         <div class="md:grid md:grid-cols-3 md:gap-6">
           
           <div class="mt-5 md:mt-0 md:col-span-2">
-            <form id="form-add">
+            <form id="form-edit">
               <div class="shadow sm:rounded-md sm:overflow-hidden">
                 <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <div class="grid grid-cols-3 gap-6">
                     <div class="col-span-3 sm:col-span-2">
                       <label for="company-website" class="block text-sm font-medium text-gray-700"> Tên sản phẩm </label>
                       <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="text" name="company-website" id="product-name" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" >
+                        <input type="text" name="company-website" value="${data.name}" id="product-name" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" >
                       </div>
                     </div>
                     <div class="col-span-3 sm:col-span-2">
                       <label for="company-website" class="block text-sm font-medium text-gray-700"> Giá </label>
                       <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="number" name="company-website" id="product-price" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" >
+                        <input type="number" name="company-website" value="${data.price}" id="product-price" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" >
                       </div>
                     </div>
                   </div>
                   <div class="col-span-3 sm:col-span-2">
                     <label for="company-website" class="block text-sm font-medium text-gray-700"> Số lượng </label>
                     <div class="mt-1 flex rounded-md shadow-sm">
-                      <input type="number" name="company-website" id="product-quantity" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" >
+                      <input type="number" name="company-website" value="${data.quantity}" id="product-quantity" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" >
                     </div>
                   </div>
                 </div>
                   <div>
                     <label for="about" class="block text-sm font-medium text-gray-700"> Mô tả </label>
                     <div class="mt-1">
-                      <textarea id="product-desc" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+                      <textarea id="product-desc"  name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md">${data.desc}</textarea>
                     </div>
                     <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
                   </div>
@@ -77,6 +81,7 @@ const AdminAddProduct = {
                         <div class="flex text-sm text-gray-600">
                           <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                             <input type="file" id="img-post">
+                            <img id="img-preview"" src="${data.image}">
                           </label>
                           <p class="pl-1">or drag and drop</p>
                         </div>
@@ -86,7 +91,7 @@ const AdminAddProduct = {
                   </div>
                 </div>
                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm</button>
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sửa</button>
                 </div>
               </div>
             </form>
@@ -99,41 +104,46 @@ const AdminAddProduct = {
         
         `;
     },
-    afterRender() {
-        const formAdd = document.querySelector("#form-add");
+    afterRender(id) {
+        const formEdit = document.querySelector("#form-edit");
         const imgPost = document.querySelector("#img-post");
+        const imgPreview = document.querySelector("#img-preview");
+        let imgLink = "";
 
+        const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/ass1/image/upload";
+        const CLOUDINARY_PRESET = "qw5d52r4";
+
+        // preview image when upload
         imgPost.addEventListener("change", async (e) => {
-            const file = e.target.files[0];
-            const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/ass1/image/upload";
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
 
-            const formData = new FormData();
+        formEdit.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const file = imgPost.files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("upload_preset", CLOUDINARY_PRESET);
 
-            formData.append("file", file);
-            formData.append("upload_preset", "qw5d52r4");
+                // call api cloudinary
 
-            // call api cloudinary
-
-            const response = await axios.post(CLOUDINARY_API, formData, {
-                headers: {
-                    "Content-Type": "application/form-data",
-                },
-            });
-            console.log(response.data.url);
-
-            formAdd.addEventListener("submit", (a) => {
-                a.preventDefault();
-                add({
-                    name: document.querySelector("#product-name").value,
-                    price: document.querySelector("#product-price").value,
-                    quantity: document.querySelector("#product-quantity").value,
-                    image: response.data.url,
-                    desc: document.querySelector("#product-desc").value,
+                const { data } = await axios.post(CLOUDINARY_API, formData, {
+                    headers: {
+                        "Content-Type": "application/form-data",
+                    },
                 });
-
-                console.log(add.data);
+                imgLink = data.url;
+            }
+            update({
+                id,
+                name: document.querySelector("#product-name").value,
+                price: document.querySelector("#product-price").value,
+                quantity: document.querySelector("#product-quantity").value,
+                img: imgLink ? imgLink : imgPreview.src,
+                desc: document.querySelector("#product-desc").value,
             });
         });
     },
 };
-export default AdminAddProduct;
+export default AdminUpdateProduct;
